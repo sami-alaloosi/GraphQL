@@ -1,17 +1,18 @@
+/** @format */
+
 // this file will be deleted after creating the db
 
-export const books = [
-    { id: "1", name: "cracking the coding interview", genre: "Programming" },
-    {
-      id: "2",
-      name: "Designing Data-Intensive Applications",
-      genre: "Programming",
-    },
-    { id: "3", name: "The 48 Laws of Power", genre: "Self-help book" },
-  ];
+ export const books = [
+  { name: "Name of the Wind", genre: "Fantasy", id: "1", authorId: "1" },
+  { name: "The Final Empire", genre: "Fantasy", id: "2", authorId: "2" },
+  { name: "The Hero of Ages", genre: "Fantasy", id: "4", authorId: "2" },
+  { name: "The Long Earth", genre: "Sci-Fi", id: "3", authorId: "3" },
+  { name: "The Colour of Magic", genre: "Fantasy", id: "5", authorId: "3" },
+  { name: "The Light Fantastic", genre: "Fantasy", id: "6", authorId: "3" },
+];
 
 export const authors = [
-    { id: "1" ,name: "Gayle Laakmann McDowell", age: 40 },
-    { id: "2" ,name: "Martin Kleppmann", age: 33 },
-    { id: "3" ,name: "Robert Greene", age: 50 }
-]
+  { name: "Patrick Rothfuss", age: 44, id: "1" },
+  { name: "Brandon Sanderson", age: 42, id: "2" },
+  { name: "Terry Pratchett", age: 66, id: "3" },
+];

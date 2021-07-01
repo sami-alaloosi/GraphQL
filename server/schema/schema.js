@@ -6,6 +6,7 @@ const {
   GraphQLSchema,
   GraphQLID,
   GraphQLInt,
+  GraphQLList
 } = graphql;
 import _ from "lodash";
 
@@ -18,6 +19,12 @@ const BookType = new GraphQLObjectType({
     id: { type: GraphQLID },
     name: { type: GraphQLString },
     genre: { type: GraphQLString },
+    author:{
+      type: AuthorType,
+      resolve(parent, args){
+       return  _.find(authors,{id: parent.authorId})
+      }
+    }
   }),
 });
 
@@ -27,6 +34,12 @@ const AuthorType = new GraphQLObjectType({
     id: { type: GraphQLID },
     name: { type: GraphQLString },
     age: { type: GraphQLInt },
+    books:{
+      type: new GraphQLList(BookType),
+      resolve(pareant, args){
+        return _.filter(books, {authorId: pareant.id})
+      }
+    }
   }),
 });
 
