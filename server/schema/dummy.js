@@ -11,7 +11,7 @@ export const books = [
   ];
 
 export const authors = [
-    { id: 1 ,name: "Gayle Laakmann McDowell", age: 40 },
-    { id: 2 ,name: "Martin Kleppmann", age: 33 },
-    { id: 3 ,name: "Robert Greene", age: 50 }
+    { id: "1" ,name: "Gayle Laakmann McDowell", age: 40 },
+    { id: "2" ,name: "Martin Kleppmann", age: 33 },
+    { id: "3" ,name: "Robert Greene", age: 50 }
 ]
