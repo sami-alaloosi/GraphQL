@@ -3,6 +3,7 @@ import graphql from "graphql";
 import Book from "../models/book.js";
 import Author from "../models/author.js";
 import _ from "lodash";
+
 const {
   GraphQLObjectType,
   GraphQLString,
@@ -95,6 +96,24 @@ const Mutation = new GraphQLObjectType({
         })
        return  author.save()
       }
+    },
+
+    addBook:{
+      type: BookType,
+      args: {
+        name: {type: GraphQLString},
+        genre: {type: GraphQLString},
+        authorId: {type: GraphQLID}
+      },
+      resolve(parent, args){
+        let book = new Book({
+          name: args.name,
+          genre: args.genre,
+          authorId: args.authorId
+        })
+       return  book.save()
+      }
+      
     }
   }
 })
