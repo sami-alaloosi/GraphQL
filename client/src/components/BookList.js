@@ -1,13 +1,27 @@
-import React from 'react'
+/** @format */
 
-export default function BookList() {
-    return (
-        <div>
-            <ul id="book-list">
-                <li>
-                    Book name
-                </li>
-            </ul>
-        </div>
-    )
+import React from "react";
+import { useQuery, gql } from "@apollo/client";
+
+const getBooksQuery = gql`
+  {
+    books {
+      id
+      name
+    }
+  }
+`;
+
+function BookList() {
+  const { loading, error, data } = useQuery(getBooksQuery);
+  console.log(data)
+  return (
+    <div>
+      <ul id="book-list">
+        <li>Book name</li>
+      </ul>
+    </div>
+  );
 }
+
+export default BookList;
